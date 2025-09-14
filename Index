@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Teste</title>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Se você está vendo esta mensagem, significa que seu arquivo HTML está funcionando corretamente.</p>
+</body>
+</html>
