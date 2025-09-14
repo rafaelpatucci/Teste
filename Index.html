@@ -41,16 +41,18 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.08);
             margin-bottom: 2.5rem;
             overflow: hidden;
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .day-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
         }
         .day-header {
             background-color: #343a40;
             color: #fff;
             padding: 1.2rem 1.5rem;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
@@ -62,6 +64,7 @@
             font-size: 1.1rem;
             font-weight: 500;
             opacity: 0.9;
+            text-align: right;
         }
         .day-content {
             padding: 1.5rem;
@@ -75,21 +78,28 @@
             border-bottom: none;
             margin-bottom: 0;
         }
+        .tour-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
         .tour h3 {
             color: #C3282D;
             margin-top: 0;
+            margin-bottom: 0.5rem;
             font-size: 1.5rem;
         }
-        .tour .badge {
+        .badge {
             display: inline-block;
-            background: #28a745;
             color: white;
             padding: 0.3em 0.7em;
             border-radius: 0.25rem;
             font-size: 0.85em;
-            margin-left: 10px;
             font-weight: 600;
         }
+        .badge.sugestao { background: #17a2b8; }
+        .badge.opcional { background: #6c757d; }
+        
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -103,6 +113,7 @@
             border-radius: 5px;
             border: 2px solid #dee2e6;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background-color: #f1f1f1;
         }
         .photo-gallery img:hover {
             transform: scale(1.05);
@@ -113,15 +124,13 @@
             background-color: #f8f9fa;
             padding: 1rem;
             border-radius: 5px;
-            border: 1px solid #e9ecef;
+            border-left: 5px solid #C3282D;
         }
          h4 {
             margin-top: 0;
             margin-bottom: 0.5rem;
             color: #343a40;
-            border-bottom: 2px solid #C3282D;
-            padding-bottom: 0.5rem;
-            display: inline-block;
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -130,7 +139,8 @@
     <header id="main-header"></header>
 
     <div class="container" id="roteiro-container">
-        </div>
+        <!-- Os cards de cada dia do roteiro serão inseridos aqui dinamicamente -->
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -144,28 +154,37 @@
                 dayCard.className = 'day-card';
 
                 let passeiosHtml = '';
-                dia.passeios.forEach(passeio => {
-                    passeiosHtml += `
-                        <div class="tour">
-                            <h3>
-                                ${passeio.nome}
-                                ${passeio.sugestao ? '<span class="badge">Sugestão</span>' : ''}
-                            </h3>
-                            <p><strong>Custo:</strong> ${passeio.custo}</p>
-                            <p>${passeio.descricao}</p>
-                            <h4>Galeria de Fotos</h4>
-                            <div class="photo-gallery">
-                                ${passeio.fotos.map(fotoUrl => `<img src="${fotoUrl}" alt="Foto de ${passeio.nome}">`).join('')}
+                if (dia.passeios) {
+                    dia.passeios.forEach(passeio => {
+                        let badgeHtml = '';
+                        if (passeio.sugestao) {
+                            badgeHtml = '<span class="badge sugestao">Sugestão</span>';
+                        } else if (passeio.opcional) {
+                             badgeHtml = '<span class="badge opcional">Opcional</span>';
+                        }
+
+                        passeiosHtml += `
+                            <div class="tour">
+                                <div class="tour-header">
+                                    <h3>${passeio.nome}</h3>
+                                    ${badgeHtml}
+                                </div>
+                                <p><strong>Custo:</strong> ${passeio.custo}</p>
+                                <p>${passeio.descricao}</p>
+                                <h4>Galeria de Fotos</h4>
+                                <div class="photo-gallery">
+                                    ${passeio.fotos.map(fotoUrl => `<img src="${fotoUrl}" alt="Foto de ${passeio.nome}" title="Foto de ${passeio.nome}">`).join('')}
+                                </div>
                             </div>
-                        </div>
-                    `;
-                });
+                        `;
+                    });
+                }
                 
                 let acomodacaoHtml = '';
                 if(dia.acomodacao) {
                     acomodacaoHtml = `
                         <div class="accommodation">
-                             <h4>Acomodação do Dia</h4>
+                             <h4>Acomodação Principal para esta Etapa</h4>
                              <p><strong>${dia.acomodacao.nome}</strong><br>${dia.acomodacao.endereco}</p>
                         </div>
                     `
