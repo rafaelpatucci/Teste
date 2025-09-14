@@ -4,429 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roteiro de Viagem - Japão</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="roteiro.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        header {
+            background: #C3282D;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid #333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.3rem;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-        .section-title {
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
+        .day-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
         }
-        .card {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-        .card:hover {
+        .day-card:hover {
             transform: translateY(-5px);
+        }
+        .day-header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .day-header h2 {
+            margin: 0;
+            font-size: 1.9rem;
+        }
+        .day-header span {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        .day-content {
+            padding: 1.5rem;
+        }
+        .tour {
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tour:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .tour h3 {
+            color: #C3282D;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .tour .badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 0.3em 0.7em;
+            border-radius: 0.25rem;
+            font-size: 0.85em;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        .photo-gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #dee2e6;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .accommodation {
+            margin-bottom: 1.5rem;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #e9ecef;
+        }
+         h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #343a40;
+            border-bottom: 2px solid #C3282D;
+            padding-bottom: 0.5rem;
+            display: inline-block;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-relaxed">
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+<body>
 
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-2">Roteiro Japão</h1>
-            <p class="text-lg sm:text-xl text-gray-600">Sugestão de passeios para Flávio e Rafael</p>
-        </header>
+    <header id="main-header"></header>
 
-        <!-- Itinerary Sections -->
-        <main class="space-y-10">
+    <div class="container" id="roteiro-container">
+        </div>
 
-            <!-- Sumário Executivo -->
-            <div class="card p-6 md:p-8 space-y-4">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Sumário Executivo</h2>
-                <p class="text-gray-700">Este roteiro de 22 dias no Japão, de 21 de novembro a 12 de dezembro, foi cuidadosamente planejado para oferecer uma experiência rica e diversificada. O itinerário cobre as principais cidades e pontos turísticos, com foco em história, gastronomia, modernidade e natureza.</p>
-                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
-                    <li><strong class="text-gray-800">Osaka (21/11 - 26/11):</strong> 5 noites. Hotel: Holiday Inn Osaka Namba. Atrações Principais: Dotonbori, Castelo de Osaka, Templo Shitennoji, Umeda Sky Building, Bate-volta para Nara.</li>
-                    <li><strong class="text-gray-800">Hiroshima (26/11 - 28/11):</strong> 2 noites. Hotel: Hiroshima Washington Hotel. Atrações Principais: Parque Memorial da Paz, Miyajima e Santuário Itsukushima.</li>
-                    <li><strong class="text-gray-800">Quioto (28/11 - 03/12):</strong> 5 noites. Hotel: Travelodge Kyoto Shijo Kawaramachi. Atrações Principais: Kinkaku-ji, Fushimi Inari Taisha, Bosque de Bambu de Arashiyama, Templo Kiyomizu-dera.</li>
-                    <li><strong class="text-gray-800">Kanazawa (03/12 - 05/12):</strong> 2 noites. Hotel: Hotel Forza Kanazawa. Atrações Principais: Shirakawa-go.</li>
-                    <li><strong class="text-gray-800">Tóquio (05/12 - 12/12):</strong> 7 noites. Hotel: Hilton Tokyo Odaiba. Atrações Principais: Ginza, Shibuya, Harajuku, Asakusa, Ueno, Yanaka.</li>
-                </ul>
-            </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('main-header');
+            const container = document.getElementById('roteiro-container');
 
-            <!-- Dia 21/11 - Chegada em Osaka -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 21/11 - Chegada em Osaka</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/1e40af/ffffff?text=Aeroporto+de+Osaka" alt="Aeroporto Internacional de Kansai (KIX) em Osaka" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Chegada em Osaka prevista para o final do dia. Aproveite o restante da noite para se instalar no hotel <strong class="text-blue-600">Holiday Inn Osaka Namba</strong> e descansar da viagem.</p>
-                </div>
-            </div>
+            header.innerHTML = `<h1>${roteiro.titulo}</h1><p>${roteiro.periodo}</p>`;
 
-            <!-- Dia 22/11 - Descubra Osaka -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 22/11 - Descubra Osaka</h2>
-                <div class="space-y-2">
-                    <p class="text-gray-700 font-semibold mb-2">Visita guiada por Osaka e seu Castelo (compartilhado)</p>
-                    
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Castelo de Osaka</h3>
-                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Castelo+de+Osaka" alt="Castelo de Osaka em um dia de sol" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Símbolo de Osaka, o Castelo abriga um museu moderno com vistas espetaculares. O tour com guia em espanhol tem duração de 5 horas.</p>
-                            <a href="https://www.google.com/maps/dir/Holiday+Inn+Osaka+Namba,+Japan/Osaka+Castle,+Osakajo,+Chuo-ku,+Osaka,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
+            roteiro.dias.forEach(dia => {
+                const dayCard = document.createElement('div');
+                dayCard.className = 'day-card';
+
+                let passeiosHtml = '';
+                dia.passeios.forEach(passeio => {
+                    passeiosHtml += `
+                        <div class="tour">
+                            <h3>
+                                ${passeio.nome}
+                                ${passeio.sugestao ? '<span class="badge">Sugestão</span>' : ''}
+                            </h3>
+                            <p><strong>Custo:</strong> ${passeio.custo}</p>
+                            <p>${passeio.descricao}</p>
+                            <h4>Galeria de Fotos</h4>
+                            <div class="photo-gallery">
+                                ${passeio.fotos.map(fotoUrl => `<img src="${fotoUrl}" alt="Foto de ${passeio.nome}">`).join('')}
+                            </div>
                         </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Bairro de Tsuruhashi</h3>
-                            <img src="https://placehold.co/400x300/f3f4f6/ffffff?text=Bairro+de+Tsuruhashi" alt="Ruas movimentadas do bairro de Tsuruhashi" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Caminhada até o coração da comunidade coreana, um dos bairros mais antigos da cidade. Tempo livre para comer e experimentar pratos autênticos como bulgogi, kimchi e bibimbap.</p>
-                            <a href="https://www.google.com/maps/dir/Osaka+Castle,+Osakajo,+Chuo-ku,+Osaka,+Japan/Tsuruhashi+Korean+Town,+Tsuruhashi,+Ikuno-ku,+Osaka,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
+                    `;
+                });
+                
+                let acomodacaoHtml = '';
+                if(dia.acomodacao) {
+                    acomodacaoHtml = `
+                        <div class="accommodation">
+                             <h4>Acomodação do Dia</h4>
+                             <p><strong>${dia.acomodacao.nome}</strong><br>${dia.acomodacao.endereco}</p>
                         </div>
+                    `
+                }
+
+                dayCard.innerHTML = `
+                    <div class="day-header">
+                        <h2>${dia.data} &bull; ${dia.cidade}</h2>
+                        <span>${dia.titulo}</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Dia 23/11 - Bairros Icônicos de Osaka -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 23/11 - Bairros Icônicos de Osaka</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Bairro Dotonbori</h3>
-                            <img src="https://placehold.co/400x300/d1d5db/ffffff?text=Dotonbori" alt="Placas de neon em Dotonbori à noite" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Dotonbori é o coração da vida noturna e gastronômica de Osaka, famoso por suas placas de neon, em especial a do Glico Running Man. As ruas são repletas de restaurantes e bares.</p>
-                            <a href="https://www.google.com/maps/dir/Holiday+Inn+Osaka+Namba,+Japan/Dotonbori,+Chuo-ku,+Osaka,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Umeda Sky Building</h3>
-                            <img src="https://placehold.co/400x300/e5e7eb/ffffff?text=Umeda+Sky+Building" alt="Umeda Sky Building de dia" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Com sua arquitetura única e o Floating Garden Observatory, este edifício oferece vistas espetaculares de Osaka, incluindo o Rio Yodo. O acesso ao observatório é pago.</p>
-                            <a href="https://www.google.com/maps/dir/Dotonbori,+Chuo-ku,+Osaka,+Japan/Umeda+Sky+Building,+Oyodonaka,+Kita-ku,+Osaka,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
+                    <div class="day-content">
+                        ${acomodacaoHtml}
+                        ${passeiosHtml}
                     </div>
-                </div>
-            </div>
+                `;
+                container.appendChild(dayCard);
+            });
+        });
+    </script>
 
-            <!-- Dia 24/11 - Gastronomia e Tradições -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 24/11 - Gastronomia e Tradições</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Mercado de Kuromon</h3>
-                            <img src="https://placehold.co/400x300/f3f4f6/ffffff?text=Mercado+Kuromon" alt="Barracas de comida no Mercado de Kuromon" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Conhecido como a "Cozinha de Osaka", o Mercado Kuromon é um paraíso para os amantes de comida. Aqui você pode provar frutos do mar frescos, frutas e outras delícias locais.</p>
-                            <a href="https://www.google.com/maps/dir/Holiday+Inn+Osaka+Namba,+Japan/Kuromon+Market,+Nipponbashi,+Chuo-ku,+Osaka,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: TeamLab Botanical Garden Osaka</h3>
-                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=TeamLab+Botanical+Garden" alt="Instalação de luzes no TeamLab Botanical Garden" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Uma experiência artística interativa em um jardim botânico, onde a natureza e a tecnologia se misturam. As instalações de luzes e sons mudam com o movimento das pessoas.</p>
-                            <a href="https://www.google.com/maps/dir/Kuromon+Market,+Nipponbashi,+Chuo-ku,+Osaka,+Japan/TeamLab+Botanical+Garden+Osaka,+Nagai+Park,+Higashisumiyoshi-ku,+Osaka,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dia 25/11 - Excursão para Nara -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 25/11 - Excursão para Nara</h2>
-                <div class="space-y-2">
-                    <h3 class="font-bold text-lg mb-2">Passeio: Parque de Nara e Templo Todaiji</h3>
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <img src="https://placehold.co/400x300/9ca3af/ffffff?text=Parque+de+Nara" alt="Veados em Nara" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Nara é a casa de milhares de veados que passeiam livremente pelo Parque de Nara. Dentro do parque, o Templo Todaiji abriga o Daibutsu, ou Grande Buda, uma das maiores estátuas de bronze do mundo.</p>
-                            <a href="https://www.google.com/maps/dir/Holiday+Inn+Osaka+Namba,+Japan/Nara+Park,+Nara,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Santuário Kasuga Taisha</h3>
-                            <img src="https://placehold.co/400x300/f3f4f6/ffffff?text=Kasuga+Taisha" alt="Lanternas de pedra no Santuário Kasuga Taisha" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Este santuário xintoísta é famoso por suas milhares de lanternas de pedra e bronze, doadas ao longo dos anos por fiéis. A atmosfera é mística e serena.</p>
-                            <a href="https://www.google.com/maps/dir/Todaiji+Temple,+Nara,+Japan/Kasuga+Taisha+Shrine,+Nara,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dia 26/11 - Viagem para Hiroshima -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 26/11 - Viagem para Hiroshima</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/94a3b8/ffffff?text=Trem+Bala+Shinkansen" alt="Trem bala Shinkansen no Japão" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Viagem de trem para Hiroshima. Tempo para fazer o check-in no hotel <strong class="text-blue-600">Hiroshima Washington Hotel</strong> e começar a explorar a cidade, visitando o Parque Memorial da Paz e o Museu da Bomba Atômica.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://www.google.com/maps/dir/Holiday+Inn+Osaka+Namba,+Japan/Shin-Osaka+Station,+Yodogawa-ku,+Osaka,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota para a estação de trem (Osaka)</a></li>
-                        <li><a href="https://www.google.com/maps/dir/Hiroshima+Station,+Minami-ku,+Hiroshima,+Japan/Hiroshima+Washington+Hotel,+Naka-ku,+Hiroshima,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota da estação de trem para o hotel (Hiroshima)</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Dia 27/11 - Tour em Hiroshima e Miyajima -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 27/11 - Tour em Hiroshima e Miyajima</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Parque Memorial da Paz</h3>
-                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Parque+Memorial+da+Paz" alt="Parque Memorial da Paz em Hiroshima com o Domo da Bomba Atômica" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Parque Memorial da Paz foi construído para honrar as vítimas do bombardeio de 1945. Ele inclui o icônico Domo da Bomba Atômica, o Museu Memorial da Paz e o Cenotáfio.</p>
-                            <a href="https://www.google.com/maps/dir/Hiroshima+Washington+Hotel,+Naka-ku,+Hiroshima,+Japan/Hiroshima+Peace+Memorial+Park,+Naka-ku,+Hiroshima,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Ilha de Miyajima e Santuário Itsukushima</h3>
-                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=Miyajima" alt="Templo flutuante em Miyajima" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">A Ilha de Miyajima é famosa por seu Santuário Itsukushima e o portão torii "flutuante" que parece estar sobre a água na maré alta. É um dos locais mais fotografados do Japão.</p>
-                            <a href="https://www.google.com/maps/dir/Hiroshima+Peace+Memorial+Park,+Naka-ku,+Hiroshima,+Japan/Miyajimaguchi+Pier,+Hatsukaichi,+Hiroshima,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota para o Terminal de Ferry</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dia 28/11 - Viagem para Quioto -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 28/11 - Viagem para Quioto</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/10b981/ffffff?text=Quioto" alt="Templo em Quioto" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Partida de Hiroshima para Quioto de trem-bala. O hotel é o <strong class="text-blue-600">Travelodge Kyoto Shijo Kawaramachi</strong>. Aproveite o restante do dia para se instalar e fazer uma primeira exploração da cidade, que é a capital cultural do Japão.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://www.google.com/maps/dir/Hiroshima+Washington+Hotel,+Naka-ku,+Hiroshima,+Japan/Hiroshima+Station,+Minami-ku,+Hiroshima,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota para a estação de trem (Hiroshima)</a></li>
-                        <li><a href="https://www.google.com/maps/dir/Kyoto+Station,+Higashishiokoji+cho,+Shimogyo+Ward,+Kyoto,+Japan/Travelodge+Kyoto+Shijo+Kawaramachi,+240+Yamasake-cho,+Nakagyo-ku,+Kyoto,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota da estação de trem para o hotel (Quioto)</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Dia 29/11 - Ouro e Prata em Quioto -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 29/11 - Ouro e Prata em Quioto</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Kinkaku-ji (Pavilhão Dourado)</h3>
-                            <img src="https://placehold.co/400x300/d1d5db/ffffff?text=Kinkaku-ji" alt="Kinkaku-ji refletido na água" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Kinkaku-ji, ou Pavilhão Dourado, é um templo zen cujos dois andares superiores são inteiramente cobertos por folhas de ouro. É um dos templos mais famosos do Japão.</p>
-                            <a href="https://www.google.com/maps/dir/Travelodge+Kyoto+Shijo+Kawaramachi,+240+Yamasake-cho,+Nakagyo-ku,+Kyoto,+Japan/Kinkaku-ji,+1+Kinkakujicho,+Kita+Ward,+Kyoto,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Ginkaku-ji (Pavilhão de Prata)</h3>
-                            <img src="https://placehold.co/400x300/f3f4f6/ffffff?text=Ginkaku-ji" alt="Ginkaku-ji em meio à natureza" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Ginkaku-ji, ou Pavilhão de Prata, é um templo zen de estilo mais simples, conhecido por seu lindo jardim de areia e por sua tranquilidade, contrastando com o brilho do Kinkaku-ji.</p>
-                            <a href="https://www.google.com/maps/dir/Kinkaku-ji,+1+Kinkakujicho,+Kita+Ward,+Kyoto,+Japan/Ginkaku-ji,+2+Ginkakujicho,+Sakyo+Ward,+Kyoto,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Dia 30/11 - História e Sabores de Quioto -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 30/11 - História e Sabores de Quioto</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Castelo Nijo</h3>
-                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Castelo+Nijo" alt="Castelo Nijo com seus portões" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Castelo Nijo foi construído pelo primeiro xogun do período Edo. Ele é conhecido por seus "pisos de rouxinol" que chilreiam ao serem pisados, servindo como alarme contra intrusos.</p>
-                            <a href="https://www.google.com/maps/dir/Travelodge+Kyoto+Shijo+Kawaramachi,+240+Yamasake-cho,+Nakagyo-ku,+Kyoto,+Japan/Nijo+Castle,+541+Nijo-jo+cho,+Nakagyo+Ward,+Kyoto,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Mercado Nishiki</h3>
-                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=Mercado+Nishiki" alt="Barracas de comida no Mercado Nishiki" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Mercado Nishiki é um mercado de alimentos, conhecido como a "Cozinha de Quioto". Ele é o melhor lugar para provar comidas locais e encontrar ingredientes únicos.</p>
-                            <a href="https://www.google.com/maps/dir/Nijo+Castle,+541+Nijo-jo+cho,+Nakagyo+Ward,+Kyoto,+Japan/Nishiki+Market,+Nakagyo+Ward,+Kyoto,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Dia 01/12 - Floresta de Bambu de Arashiyama -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 01/12 - Floresta de Bambu de Arashiyama</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/10b981/ffffff?text=Arashiyama" alt="Bosque de bambu em Arashiyama" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">A Floresta de Bambu de Arashiyama é uma das paisagens mais famosas de Quioto. Caminhar por este local é uma experiência única e tranquila, com o som do vento nas folhas de bambu.</p>
-                    <a href="https://www.google.com/maps/dir/Travelodge+Kyoto+Shijo+Kawaramachi,+240+Yamasake-cho,+Nakagyo-ku,+Kyoto,+Japan/Arashiyama+Bamboo+Grove,+Sagano,+Ukyo+Ward,+Kyoto,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                </div>
-            </div>
-
-            <!-- Dia 02/12 - Portais Vermelhos de Fushimi Inari -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 02/12 - Portais Vermelhos de Fushimi Inari</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/ef4444/ffffff?text=Fushimi+Inari+Taisha" alt="Milhares de portões torii em Fushimi Inari" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">O Fushimi Inari Taisha é um santuário xintoísta famoso por seus milhares de portões torii vermelhos, que formam um caminho que leva até o topo da montanha. É um local de peregrinação e uma paisagem icônica.</p>
-                    <a href="https://www.google.com/maps/dir/Travelodge+Kyoto+Shijo+Kawaramachi,+240+Yamasake-cho,+Nakagyo-ku,+Kyoto,+Japan/Fushimi+Inari+Taisha,+68+Fukakusa+Yabunouchicho,+Fushimi+Ward,+Kyoto,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                </div>
-            </div>
-
-            <!-- Dia 03/12 - Viagem para Kanazawa -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 03/12 - Viagem para Kanazawa</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/f3f4f6/ffffff?text=Kanazawa" alt="Jardim em Kanazawa" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Viagem de trem para Kanazawa. O hotel é o <strong class="text-blue-600">Hotel Forza Kanazawa</strong>. Conhecida como "Pequena Quioto", a cidade é famosa por seus museus e jardins, como o Kenrokuen. Você pode se instalar no hotel e começar a explorar a cidade.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://www.google.com/maps/dir/Travelodge+Kyoto+Shijo+Kawaramachi,+240+Yamasake-cho,+Nakagyo-ku,+Kyoto,+Japan/Kyoto+Station,+Higashishiokoji+cho,+Shimogyo+Ward,+Kyoto,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota para a estação de trem (Quioto)</a></li>
-                        <li><a href="https://www.google.com/maps/dir/Kanazawa+Station,+Kinoshinbo+machi,+Kanazawa,+Ishikawa,+Japan/Hotel+Forza+Kanazawa,+Konohana-cho,+Kanazawa,+Ishikawa,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota da estação de trem para o hotel (Kanazawa)</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Dia 04/12 - Aldeias Históricas do Japão -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 04/12 - Aldeias Históricas do Japão</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/a3e635/ffffff?text=Shirakawago" alt="Vilas históricas de Shirakawago" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Passeio para a cidade histórica de Shirakawa-go, famosa por suas casas com telhados de palha íngremes. O local é considerado Patrimônio Mundial da UNESCO.</p>
-                    <a href="https://www.google.com/maps/dir/Hotel+Forza+Kanazawa,+Konohana-cho,+Kanazawa,+Ishikawa,+Japan/Shirakawa-go,+Ono+District,+Gifu,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                </div>
-            </div>
-            
-            <!-- Dia 05/12 - Viagem para Tóquio -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 05/12 - Viagem para Tóquio</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/4f46e5/ffffff?text=Tóquio" alt="Skyline de Tóquio" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Viagem de trem para Tóquio. O hotel é o <strong class="text-blue-600">Hilton Tokyo Odaiba</strong>. A capital do Japão combina modernidade e tradição, oferecendo uma variedade de atrações para todos os gostos.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://www.google.com/maps/dir/Hotel+Forza+Kanazawa,+Konohana-cho,+Kanazawa,+Ishikawa,+Japan/Kanazawa+Station,+Kinoshinbo+machi,+Kanazawa,+Ishikawa,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota para a estação de trem (Kanazawa)</a></li>
-                        <li><a href="https://www.google.com/maps/dir/Tokyo+Station,+Marunouchi,+Chiyoda+City,+Tokyo,+Japan/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota da estação de trem para o hotel (Tóquio)</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Dia 06/12 - O Melhor de Ginza -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 06/12 - O Melhor de Ginza</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Ginza Six Rooftop Garden</h3>
-                            <img src="https://placehold.co/400x300/10b981/ffffff?text=Ginza+Six+Rooftop+Garden" alt="Jardim no telhado do Ginza Six" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Este jardim no telhado do shopping Ginza Six oferece uma vista incrível da cidade e um espaço verde para relaxar em meio ao agito de Ginza. A entrada é gratuita.</p>
-                            <a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Ginza+Six,+6+Chome-10-1+Ginza,+Chuo+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Teatro Kabuki-za</h3>
-                            <img src="https://placehold.co/400x300/ef4444/ffffff?text=Teatro+Kabuki-za" alt="Teatro Kabuki-za em Tóquio" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Kabuki-za é o principal teatro de Tóquio para o kabuki, a forma de teatro tradicional japonesa. Você pode assistir a uma peça inteira ou apenas a um ato, que é mais curto e econômico.</p>
-                            <a href="https://www.google.com/maps/dir/Ginza+Six,+6+Chome-10-1+Ginza,+Chuo+City,+Tokyo,+Japan/Kabukiza+Theatre,+4+Chome-12-15+Ginza,+Chuo+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dia 07/12 - Shibuya e Harajuku Vibrantes -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 07/12 - Shibuya e Harajuku Vibrantes</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Shibuya Scramble Crossing</h3>
-                            <img src="https://placehold.co/400x300/fca5a5/ffffff?text=Shibuya" alt="Pessoas no cruzamento de Shibuya" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">Considerado o cruzamento mais movimentado do mundo, o Shibuya Scramble é um espetáculo de movimento. É o lugar perfeito para tirar fotos e observar o caos organizado, e encontrar a estátua de Hachiko.</p>
-                            <a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Shibuya+Scramble+Crossing,+2+Chome-2-1+Dogenzaka,+Shibuya+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Santuário Meiji Jingu</h3>
-                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=Meiji+Jingu" alt="Santuário Meiji Jingu e sua entrada" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Santuário Meiji Jingu é dedicado ao Imperador Meiji e à Imperatriz Shoken. É um oásis de calma, cercado por uma floresta de 100.000 árvores. A entrada é gratuita.</p>
-                            <a href="https://www.google.com/maps/dir/Shibuya+Scramble+Crossing,+2+Chome-2-1+Dogenzaka,+Shibuya+City,+Tokyo,+Japan/Meiji+Jingu,+1-1+Yoyogikamizonocho,+Shibuya+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Dia 08/12 - Tradição em Asakusa e Vista do Skytree -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 08/12 - Tradição em Asakusa e Vista do Skytree</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Templo Senso-ji</h3>
-                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Templo+Senso-ji" alt="Templo Senso-ji em Asakusa" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Templo Senso-ji, em Asakusa, é o templo budista mais antigo de Tóquio. Sua entrada, com o Portão Kaminarimon e suas lanternas gigantes, é icônica. Passeie pela rua comercial Nakamise-dori antes de entrar no templo.</p>
-                            <a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Senso-ji+Temple,+2+Chome-3-1+Asakusa,+Taito+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Tokyo Skytree Town</h3>
-                            <img src="https://placehold.co/400x300/1f2937/ffffff?text=Tokyo+Skytree" alt="Tokyo Skytree à noite" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">A Tokyo Skytree é a torre de telecomunicações mais alta do mundo. Os decks de observação oferecem vistas de 360 graus de Tóquio, e nos arredores você encontra um aquário e um planetário.</p>
-                            <a href="https://www.google.com/maps/dir/Senso-ji+Temple,+2+Chome-3-1+Asakusa,+Taito+City,+Tokyo,+Japan/Tokyo+Skytree,+1+Chome-1-2+Oshiage,+Sumida+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dia 09/12 - Hakone e Monte Fuji -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 09/12 - Hakone e Monte Fuji</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/94a3b8/ffffff?text=Monte+Fuji" alt="Monte Fuji com o Lago Ashi" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Excursão guiada para Hakone, com passeio de barco no Lago Ashi e vistas do Monte Fuji. A região é conhecida por seus onsens (termas naturais).</p>
-                    <a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Hakone,+Ashigarashimo+District,+Kanagawa,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                </div>
-            </div>
-            
-            <!-- Dia 10/12 - Ueno e Yanaka -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 10/12 - Ueno e Yanaka</h2>
-                <div class="space-y-2">
-                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Parque de Ueno</h3>
-                            <img src="https://placehold.co/400x300/10b981/ffffff?text=Parque+de+Ueno" alt="Pessoas no Parque de Ueno" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O Parque de Ueno é um dos parques públicos mais famosos de Tóquio, com museus, um zoológico, um lago de lótus e o Santuário Toshogu. É um ótimo lugar para relaxar.</p>
-                            <a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Ueno+Park,+Uenokoen,+Taito+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                        <div class="md:w-1/2">
-                            <h3 class="font-bold text-lg mb-2">Passeio: Bairro de Yanaka</h3>
-                            <img src="https://placehold.co/400x300/ef4444/ffffff?text=Yanaka" alt="Rua tranquila em Yanaka" class="w-full rounded-lg mb-4">
-                            <p class="text-sm text-gray-600">O bairro de Yanaka é uma das poucas áreas de Tóquio que sobreviveu aos terremotos e bombardeios. É um lugar tranquilo, com lojas antigas, templos e uma atmosfera nostálgica.</p>
-                            <a href="https://www.google.com/maps/dir/Ueno+Park,+Uenokoen,+Taito+City,+Tokyo,+Japan/Yanaka+Ginza+Shopping+Street,+3+Chome-13-1+Yanaka,+Taito+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dia 11/12 - Odaiba -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 11/12 - Odaiba</h2>
-                <div class="space-y-2">
-                    <h3 class="font-bold text-lg mb-2">Transporte: Yurikamome Line</h3>
-                    <img src="https://placehold.co/800x400/fca5a5/ffffff?text=Yurikamome+Line" alt="Monotrilho Yurikamome em Tóquio" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-sm text-gray-600">A linha de monotrilho Yurikamome oferece vistas deslumbrantes da cidade e da Ponte do Arco-Íris. Pegue-o da Estação Shimbashi até a Estação Aomi.</p>
-                    <a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Shimbashi+Station,+2+Chome+Shimbashi,+Minato+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Rota do Hotel para a Estação Shimbashi</a>
-                    
-                    <h3 class="font-bold text-lg mt-4 mb-2">Passeio: TeamLab Borderless</h3>
-                    <img src="https://placehold.co/400x300/a3e635/ffffff?text=TeamLab+Borderless" alt="Pessoas em uma instalação do TeamLab" class="w-full rounded-lg mb-4">
-                    <p class="text-sm text-gray-600">O TeamLab Borderless é um museu de arte digital imersivo e interativo. Uma experiência única e futurista. <strong class="font-bold">Observação:</strong> a roda-gigante de Odaiba foi desmontada. Você pode explorar outras atrações como o DiverCity Tokyo Plaza e ver o robô Gundam em tamanho real.</p>
-                    <a href="https://www.google.com/maps/dir/Aomi+Station,+1+Aomi,+Koto+City,+Tokyo,+Japan/TeamLab+Borderless,+Aomi,+Koto+City,+Tokyo,+Japan/" target="_blank" class="mt-2 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Rota da Estação Aomi para TeamLab</a>
-                    
-                    <h3 class="font-bold text-lg mt-4 mb-2">Sugestão de Restaurantes em Tóquio</h3>
-                    <p class="text-sm text-gray-600">
-                        <strong class="font-bold">Oriental:</strong> Shinjuku Katsugen (tonkatsu). Aprox. ¥2.500 por pessoa.
-                        <a href="https://www.google.com/maps/dir/DiverCity+Tokyo+Plaza,+1-1-10+Aomi,+Koto+City,+Tokyo,+Japan/Shinjuku+Katsugen,+3-23-2+Shinjuku,+Shinjuku-ku,+Tokyo,+Japan/" target="_blank" class="mt-1 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                        <br>
-                        <strong class="font-bold">Ocidental:</strong> La'Piazzetta (italiano). Aprox. ¥3.000 por pessoa.
-                        <a href="https://www.google.com/maps/dir/DiverCity+Tokyo+Plaza,+1-1-10+Aomi,+Koto+City,+Tokyo,+Japan/La'Piazzetta,+1-1-10+Odaiba,+Minato+City,+Tokyo,+Japan/" target="_blank" class="mt-1 inline-block text-blue-500 hover:text-blue-700 font-semibold text-sm">Ver Rota no Google Maps</a>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Dia 12/12 - Retorno -->
-            <div class="card p-6 md:p-8 space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 12/12 - Retorno</h2>
-                <div class="space-y-2">
-                    <img src="https://placehold.co/800x400/4b5563/ffffff?text=Aeroporto" alt="Aeroporto Internacional de Narita ou Haneda" class="w-full rounded-lg object-cover h-64 md:h-80">
-                    <p class="text-gray-700">Fim da viagem. Partida para o aeroporto (Narita - NRT ou Haneda - HND) para o retorno ao Brasil. Uma jornada inesquecível pelo Japão!</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Narita+International+Airport,+Furugome,+Narita,+Chiba,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota para o Aeroporto de Narita (NRT)</a></li>
-                        <li><a href="https://www.google.com/maps/dir/Hilton+Tokyo+Odaiba,+1-9+Daiba,+Minato+City,+Tokyo,+Japan/Haneda+Airport,+Hanedakuko,+Ota+City,+Tokyo,+Japan/" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold">Rota para o Aeroporto de Haneda (HND)</a></li>
-                    </ul>
-                </div>
-            </div>
-
-        </main>
-    </div>
 </body>
 </html>
