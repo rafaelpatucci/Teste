@@ -1,700 +1,368 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roteiro de Viagem no Japão</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-@import url('https://fonts.googleapis.com/css2?
-family=Inter:wght@400;500;600;700&display=swap');
-body {
-font-family: 'Inter'
-, sans-serif;
-background-color: #f3f4f6;
-}
-.container {
-max-width: 1024px;
-}
-.card {
-background-color: white;
-border-radius: 0.75rem;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-.section-title {
-position: relative;
-padding-bottom: 0.5rem;
-margin-bottom: 1rem;
-}
-.section-title::after {
-content: '';
-position: absolute;
-left: 0;
-bottom: 0;
-width: 50px;
-height: 3px;
-background-color: #6366f1;
-border-radius: 9999px;
-}
-img {
-border-radius: 0.5rem;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiro de Viagem - Japão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .section-title {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .text-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 flex justify-center min-h-screen p-4">
-<div class="container mx-auto space-y-8">
-<!-- Título principal e sumário -->
-<header class="card p-6 md:p-8 text-center">
-<h1 class="text-3xl md:text-4xl font-bold text-gray-800">Roteiro de Viagem no Japão</h1>
-<p class="mt-2 text-gray-600">Um guia completo e visual para a sua jornada de 22 dias.
-</p>
-</header>
-<!-- Dia 21/11 - Chegada em Osaka -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 21/11 - Chegada em Osaka</h2>
-<div class="space-y-4">
-<div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0
-md:space-x-6">
-<img src="https://i.ibb.co/68v9LgS/KIX.jpg" alt="Aeroporto Internacional de Kansai (KIX)"
-class="w-full md:w-1/2 rounded-lg object-cover h-64 md:h-auto">
-<div class="flex-1">
-<h3 class="text-xl font-semibold text-gray-700">Chegada e Acomodação</h3>
-<p class="mt-2 text-gray-600">O dia 21/11 é dedicado à sua chegada em Osaka e ao
-traslado para o hotel. Ao desembarcar no Aeroporto Internacional de Kansai (KIX), o foco é seguir para
-o Holiday Inn Osaka Namba para se instalar, descansar da longa viagem e se preparar para os
-próximos dias de exploração.
-</p>
-<p class="mt-4 text-sm text-gray-500">
-**Rota de Transporte:** Do Aeroporto Internacional de Kansai (KIX), pegue o trem
-Nankai-Kuko Line para a Estação Namba. O trajeto leva aproximadamente 45 minutos e custa em torno
-de ¥970 por pessoa. Do Terminal Nankai Namba, o hotel fica a cerca de 10 minutos a pé.
-</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Dia 22/11 - Descubra a História e Cultura de Osaka -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 22/11 - Descubra a História e
-Cultura de Osaka</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<!-- Passeio 1 -->
-<div class="space-y-2">
-<img src="https://i.ibb.co/zGyxR2H/osaka-castle.jpg" alt="Castelo de Osaka" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Castelo de Osaka</h3>
-<p class="text-gray-600">O Castelo de Osaka é um dos símbolos mais importantes da
-cidade, com uma rica história do século XVI. O castelo, que foi reconstruído diversas vezes, abriga um
-museu que documenta a sua história e a de Toyotomi Hideyoshi, que o construiu. Do topo da torre
-principal, você pode apreciar vistas panorâmicas da cidade.
-</p>
-</div>
-<!-- Passeio 2 -->
-<div class="space-y-2">
-<img src="https://i.ibb.co/tCgK6mJ/tsuruhashi.jpg" alt="Bairro Coreano de Tsuruhashi"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Bairro Coreano de Tsuruhashi</h3>
-<p class="text-gray-600">O Bairro Coreano de Tsuruhashi é um dos mais antigos de
-Osaka. É famoso por seu mercado de rua, restaurantes de churrasco coreano (yakiniku) e lojas de
-produtos asiáticos. É um lugar vibrante e uma excelente opção para o almoço.
-</p>
-</div>
-<!-- Passeio 3 -->
-<div class="space-y-2">
-<img src="https://i.ibb.co/7W23hN4/shitennoji.jpg" alt="Templo Shitennoji" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Templo Shitennoji</h3>
-<p class="text-gray-600">O Templo Shitennoji é um dos templos budistas mais antigos do
-Japão. Construído em 593, sua arquitetura original, incluindo um pagode de cinco andares, foi
-preservada através de reconstruções. O local oferece uma atmosfera de paz e é ideal para meditação.
-</p>
-</div>
-<!-- Passeio 4 -->
-<div class="space-y-2">
-<img src="https://i.ibb.co/K2b4mS1/abeno-harukas.jpg" alt="Abeno Harukas, Osaka"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Bairro de Tennoji</h3>
-<p class="text-gray-600">O bairro de Tennoji está localizado ao redor do templo e da
-Estação Tennoji. É uma área comercial e cultural com lojas, restaurantes e um impressionante
-observatório. Visite o **Harukas 300 Observatory**
-, no edifício Abeno Harukas, que custa
-aproximadamente ¥2.000 por pessoa.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 23/11 - Bairros Icônicos e Vida Noturna de Osaka -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 23/11 - Bairros Icônicos e Vida
-Noturna de Osaka</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/7z06HqW/namba-yasaka-jinja.jpg" alt="Namba Yasaka Jinja,
-Osaka" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Amerikamura e Nanba</h3>
-<p class="text-gray-600">O dia começa explorando o coração da moda jovem de Osaka, o
-bairro Amerikamura, com sua atmosfera descolada. Em seguida, siga para a movimentada área de
-Nanba, com os jardins do Namba Parks e o icônico Templo Namba Yasaka Jinja.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/7QzB1gY/den-den-town.jpg" alt="Den Den Town, Osaka"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Den Den Town</h3>
-<p class="text-gray-600">Conhecida como a "Cidade dos Eletrônicos"
-, Den Den Town é o
-paraíso da cultura pop japonesa. A área é cheia de lojas que vendem mangás, animes, videogames,
-figures e produtos eletrônicos.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/k5t4H1J/umeda-sky-building.jpg" alt="Umeda Sky Building, Osaka"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Umeda Sky Building</h3>
-<p class="text-gray-600">O Umeda Sky Building é um dos arranha-céus mais famosos de
-Osaka. O "Jardim Flutuante" em seu topo oferece uma vista de 360 graus da cidade, com uma
-plataforma de observação ao ar livre. É um dos melhores locais para ver a cidade à noite.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 24/11 - Bate e Volta para Nara -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 24/11 - Bate e Volta para Nara</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/L9HjC2B/nara-deer.jpg" alt="Parque de Nara e os Cervos"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Parque de Nara e os Cervos</h3>
-<p class="text-gray-600">O Parque de Nara é conhecido por abrigar mais de mil cervos
-sika, considerados mensageiros dos deuses. Eles andam livremente pelo parque e até se curvam em
-busca de comida. É uma experiência divertida e única.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/5c35Lq5/todaiji.jpg" alt="Templo Todaiji, Nara" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Templo Todaiji</h3>
-<p class="text-gray-600">Este templo é uma obra-prima da arquitetura budista, abrigando o
-Grande Buda, uma das maiores estátuas de bronze do mundo. A história do templo remonta ao século
-VIII. A sua arquitetura impressiona e o local é um dos mais visitados no Japão.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/p330k5H/kasuga-taisha.jpg" alt="Santuário Kasuga Taisha, Nara"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Santuário Kasuga Taisha</h3>
-<p class="text-gray-600">Este santuário xintoísta é famoso por suas centenas de lanternas
-de pedra e bronze. As lanternas, que são doadas pelos fiéis, criam um ambiente místico. O santuário é
-um dos mais sagrados do Japão.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 25/11 - Gastronomia e Tradições em Osaka -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 25/11 - Gastronomia e Tradições em
-Osaka</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/0y7R5gL/kuromon-ichiba.jpg" alt="Mercado Kuromon Ichiba,
-Osaka" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Mercado Kuromon Ichiba</h3>
-<p class="text-gray-600">Conhecido como a "cozinha de Osaka"
-, o Mercado Kuromon
-Ichiba é um paraíso gastronômico com mais de 170 lojas e bancas que vendem frutos do mar frescos,
-vegetais, carnes e doces. É o local perfeito para experimentar a culinária local e comprar ingredientes.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/0yvB3F4/sumiyoshi-taisha.jpg" alt="Santuário Sumiyoshi Taisha,
-Osaka" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Santuário Sumiyoshi Taisha</h3>
-<p class="text-gray-600">É um dos santuários mais antigos do Japão e um dos poucos
-com uma arquitetura xintoísta pura, sem influências budistas. O santuário é famoso pela sua ponte
-arqueada Sorihashi, que é um dos seus pontos mais fotogênicos.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/z6V5wBq/teamlab-botanical.jpg" alt="TeamLab Botanical Garden
-Osaka" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Jardim Botânico Nagai e TeamLab</h3>
-<p class="text-gray-600">O Jardim Botânico Nagai é um espaço tranquilo com uma grande
-variedade de plantas e flores. À noite, o jardim se transforma em uma instalação de arte digital chamada
-**TeamLab Botanical Garden Osaka**
-, que ilumina o espaço de forma mágica e interativa.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 26/11 - Viagem para Hiroshima -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 26/11 - Viagem para
-Hiroshima</h2>
-<div class="space-y-2">
-<img src="https://i.ibb.co/tCgK6mJ/shinkansen.jpg" alt="Shinkansen" class="w-full rounded-lg
-object-cover h-64 md:h-80">
-<h3 class="text-xl font-semibold text-gray-700">Viagem para Hiroshima</h3>
-<p class="text-gray-600">Este dia é dedicado à viagem de Osaka para Hiroshima. A jornada é
-feita de trem-bala, o Shinkansen, que é a forma mais rápida e confortável de viajar pelo Japão.
-</p>
-</div>
-</div>
-<!-- Dia 27/11 - Hiroshima, Miyajima e Itsukushima -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 27/11 - Hiroshima, Miyajima e
-Itsukushima</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/hK2F13x/atomic-bomb-dome.jpg" alt="Parque Memorial da Paz"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Parque Memorial da Paz e o Atomic Bomb
-Dome</h3>
-<p class="text-gray-600">O Parque Memorial da Paz e o Atomic Bomb Dome são símbolos
-da memória e da esperança. O parque é um espaço de reflexão e o domo, uma estrutura preservada,
-serve como um memorial da devastação nuclear. É um local de importância histórica e emocional para o
-Japão e para o mundo.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/C0cR7Yp/itsukushima.jpg" alt="Santuário Itsukushima, Miyajima"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Santuário Itsukushima (Miyajima)</h3>
-<p class="text-gray-600">O Santuário Itsukushima, na Ilha de Miyajima, é um Patrimônio
-Mundial da UNESCO. A sua icônica porta flutuante Torii é o destaque do local e um dos pontos mais
-fotografados do Japão. Explore as ruas tradicionais, experimente a gastronomia local e interaja com os
-cervos da ilha.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 28/11 - Viagem para Quioto -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 28/11 - Viagem para Quioto</h2>
-<div class="space-y-2">
-<img src="https://i.ibb.co/tCgK6mJ/shinkansen.jpg" alt="Shinkansen" class="w-full rounded-lg
-object-cover h-64 md:h-80">
-<h3 class="text-xl font-semibold text-gray-700">Viagem para Quioto</h3>
-<p class="text-gray-600">Este dia é dedicado à viagem de Hiroshima para Quioto. A jornada
-de trem-bala oferece uma experiência de viagem confortável e eficiente.
-</p>
-</div>
-</div>
-<!-- Dia 29/11 - Templos Kinkaku-ji e Ginkaku-ji -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 29/11 - Templos Kinkaku-ji e
-Ginkaku-ji</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/3k82Gz5/kinkaku-ji.jpg" alt="Kinkaku-ji (Pavilhão Dourado)"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Kinkaku-ji (Pavilhão Dourado)</h3>
-<p class="text-gray-600">O Kinkaku-ji é um templo zen com dois andares superiores
-completamente cobertos por folhas de ouro. O pavilhão dourado reflete na água do lago, criando uma
-imagem deslumbrante. É um dos templos mais bonitos do Japão, com uma rica história e arquitetura
-impressionante.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/5c35Lq5/ginkaku-ji.jpg" alt="Ginkaku-ji (Pavilhão de Prata)"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Ginkaku-ji (Pavilhão de Prata)</h3>
-<p class="text-gray-600">O Ginkaku-ji, ou Pavilhão de Prata, contrasta com a opulência do
-Kinkaku-ji. Ele é famoso por sua simplicidade, seus jardins de musgo e o seu jardim de areia, conhecido
-como "Mar de Areia de Prata"
-. A tranquilidade do local e a paisagem deslumbrante fazem valer a pena a
-visita.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/2d1Q61M/philosophers-path.jpg" alt="Caminho do Filósofo,
-Quioto" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Caminho do Filósofo</h3>
-<p class="text-gray-600">O Caminho do Filósofo é uma trilha pitoresca ao longo de um
-canal, ladeada por cerejeiras. A trilha conecta o Ginkaku-ji ao Templo Nanzen-ji, oferecendo um passeio
-tranquilo e relaxante.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 30/11 - História e Sabores de Quioto -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 30/11 - História e Sabores de
-Quioto</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/Krn825H/kyoto-imperial-palace.jpg" alt="Palácio Imperial de
-Quioto" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Palácio Imperial de Quioto</h3>
-<p class="text-gray-600">O Palácio Imperial de Quioto foi a antiga residência da família
-imperial japonesa por mais de mil anos. Embora o interior seja fechado ao público, os jardins e os
-edifícios externos oferecem uma experiência cultural e histórica.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/RzMnyWw/nijo-castle.jpg" alt="Castelo Nijo" class="w-full rounded-
-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Castelo Nijo</h3>
-<p class="text-gray-600">O Castelo Nijo foi construído em 1603 como a residência do
-primeiro Shogun da Dinastia Tokugawa em Quioto. O castelo é famoso pelos seus "pisos de rouxinol"
-que emitem um som de canto quando pisados.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/S6w8G6k/nishiki-market.jpg" alt="Mercado Nishiki" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Mercado Nishiki</h3>
-<p class="text-gray-600">Conhecido como a "cozinha de Quioto"
-, o Mercado Nishiki é um
-mercado de rua com mais de 130 lojas e restaurantes que vendem uma variedade de produtos frescos,
-de frutos do mar a vegetais e doces tradicionais.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/2d1Q61M/yasaka-shrine.jpg" alt="Santuário de Yasaka, Quioto"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Santuário de Yasaka</h3>
-<p class="text-gray-600">O Santuário de Yasaka, em Gion, é famoso por seu portão de
-entrada e centenas de lanternas que são acesas à noite, criando um ambiente místico. O santuário é
-palco de festivais e eventos culturais.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 01/12 - Arashiyama e o Bosque de Bambu -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 01/12 - Arashiyama e o Bosque de
-Bambu</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/h7W17jS/arashiyama-bamboo.jpg" alt="Bosque de Bambu de
-Arashiyama" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Bosque de Bambu de Arashiyama</h3>
-<p class="text-gray-600">O Bosque de Bambu de Arashiyama é um dos locais mais
-icônicos de Quioto. Caminhe por uma trilha ladeada por bambus de mais de 20 metros de altura, onde o
-som do vento passando por eles cria uma atmosfera de paz e tranquilidade.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/J3F6YJb/jojakko-ji.jpg" alt="Jojakko-ji Temple, Quioto" class="w-
-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Jojakko-ji Temple</h3>
-<p class="text-gray-600">O Jojakko-ji Temple é um templo zen conhecido por seus jardins
-de musgo e a vista panorâmica que ele oferece de Quioto. É um local de paz, ideal para meditação e
-relaxamento.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/yQ68P5T/tenryu-ji.jpg" alt="Tenryu-ji Temple, Quioto" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Tenryu-ji Temple</h3>
-<p class="text-gray-600">O Tenryu-ji Temple é considerado um dos "Cinco Grandes
-Templos Zen de Quioto"
-. O jardim do templo, com um lago e uma paisagem exuberante, é uma obra-
-prima do design japonês.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 02/12 - Portais de Fushimi Inari Taisha e Templo Kiyomizu-dera -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 02/12 - Portais de Fushimi Inari
-Taisha e Templo Kiyomizu-dera</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/JCBwF29/fushimi-inari.jpg" alt="Fushimi Inari Taisha, Quioto"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Fushimi Inari Taisha</h3>
-<p class="text-gray-600">O Fushimi Inari Taisha é um santuário xintoísta famoso por sua
-trilha de milhares de portais torii, que serpenteiam por uma floresta densa em uma montanha. O
-santuário é dedicado a Inari, a deusa do arroz e do comércio, e os torii foram doados por empresas e
-indivíduos.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/hK2F13x/kiyomizu-dera.jpg" alt="Templo Kiyomizu-dera, Quioto"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Templo Kiyomizu-dera</h3>
-<p class="text-gray-600">O Templo Kiyomizu-dera é um dos templos mais famosos do
-Japão, com uma impressionante plataforma de madeira que se projeta de uma colina, oferecendo vistas
-espetaculares da cidade. A história do templo remonta a mais de 1.200 anos.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/5c35Lq5/gion.jpg" alt="Distrito de Gion, Quioto" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Gion</h3>
-<p class="text-gray-600">Gion é o famoso distrito de gueixas de Quioto. As ruas de
-paralelepípedos e casas de chá tradicionais transportam os visitantes de volta ao passado. A atmosfera
-é de tranquilidade e elegância, e, com sorte, você poderá ver uma gueixa em seu caminho para o
-trabalho.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 03/12 - Viagem para Kanazawa -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 03/12 - Viagem para
-Kanazawa</h2>
-<div class="space-y-2">
-<img src="https://i.ibb.co/tCgK6mJ/shinkansen.jpg" alt="Hokuriku Shinkansen" class="w-full
-rounded-lg object-cover h-64 md:h-80">
-<h3 class="text-xl font-semibold text-gray-700">Viagem para Kanazawa</h3>
-<p class="text-gray-600">Este dia é dedicado à viagem de Quioto para Kanazawa. A jornada
-de trem-bala oferece uma experiência de viagem confortável e eficiente.
-</p>
-</div>
-</div>
-<!-- Dia 04/12 - Aldeias Históricas e Kanazawa -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 04/12 - Aldeias Históricas e
-Kanazawa</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/3k82Gz5/shirakawa-go.jpg" alt="Shirakawa-go, Japão" class="w-
-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Shirakawa-go</h3>
-<p class="text-gray-600">Shirakawa-go é uma vila histórica famosa por suas casas de
-telhado de palha no estilo gassho-zukuri. A vila é um Patrimônio Mundial da UNESCO e oferece um
-vislumbre da vida rural no Japão.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/2d1Q61M/kenrokuen.jpg" alt="Jardim Kenrokuen, Kanazawa"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Jardim Kenrokuen</h3>
-<p class="text-gray-600">O Jardim Kenrokuen é considerado um dos três mais belos
-jardins do Japão. Com um design paisagístico impecável e um lago artificial, é um local perfeito para
-relaxar e apreciar a beleza da natureza.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/yQ68P5T/higashi-chaya.jpg" alt="Distrito de Higashi Chaya,
-Kanazawa" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Distrito de Higashi Chaya</h3>
-<p class="text-gray-600">O Distrito de Higashi Chaya é um bairro de gueixas preservado,
-com edifícios de madeira e uma atmosfera nostálgica. É um ótimo local para caminhar, visitar lojas de
-artesanato e experimentar doces tradicionais.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 05/12 - Viagem para Tóquio -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 05/12 - Viagem para Tóquio</h2>
-<div class="space-y-2">
-<img src="https://i.ibb.co/tCgK6mJ/shinkansen.jpg" alt="Hokuriku Shinkansen" class="w-full
-rounded-lg object-cover h-64 md:h-80">
-<h3 class="text-xl font-semibold text-gray-700">Viagem para Tóquio</h3>
-<p class="text-gray-600">Este dia é dedicado à viagem de Kanazawa para Tóquio. A jornada
-de trem-bala é a forma mais rápida e confortável de viajar pelo Japão.
-</p>
-</div>
-</div>
-<!-- Dia 06/12 - Palácio Imperial e Ginza -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 06/12 - Palácio Imperial e
-Ginza</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/p330k5H/tokyo-imperial-palace.jpg" alt="Palácio Imperial de
-Tóquio" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Palácio Imperial e seus Jardins
-Externos</h3>
-<p class="text-gray-600">O Palácio Imperial é a residência da Família Imperial do Japão.
-Embora o interior do palácio seja fechado ao público, os vastos jardins externos, pontes e muralhas são
-acessíveis e oferecem um vislumbre da história e da majestade do local.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/L9HjC2B/ginza.jpg" alt="Ginza, Tóquio" class="w-full rounded-lg
-object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Ginza</h3>
-<p class="text-gray-600">Ginza é o bairro mais sofisticado de Tóquio, conhecido por suas
-butiques de alta costura, galerias de arte, lojas de departamento elegantes e restaurantes com estrelas
-Michelin. As ruas são largas e luxuosas, oferecendo uma experiência de compras e gastronomia de
-altíssimo padrão.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/2d1Q61M/ginza-six-rooftop.jpg" alt="Ginza Six Rooftop Garden"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Ginza Six Rooftop Garden</h3>
-<p class="text-gray-600">Localizado no topo do Ginza Six, este é um dos maiores jardins
-de telhado da região. Ele oferece uma vista panorâmica de 360 graus de Ginza, com uma paisagem
-verdejante que contrasta com os edifícios de luxo ao redor.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/J3F6YJb/art-aquarium.jpg" alt="ART AQUARIUM Museum Ginza"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">ART AQUARIUM Museum Ginza</h3>
-<p class="text-gray-600">Um museu de arte único que combina iluminação, música e
-aquários de peixes-dourados. As exposições são interativas e mudam a cada estação, criando uma
-experiência mágica e imersiva.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 07/12 - Shibuya e Harajuku -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 07/12 - Shibuya e Harajuku</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/h7W17jS/shibuya-crossing.jpg" alt="Shibuya Crossing" class="w-
-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Shibuya Crossing e Hachiko</h3>
-<p class="text-gray-600">Conhecido como o cruzamento de pedestres mais movimentado
-do mundo, o Shibuya Crossing é uma atração turística por si só. A estátua de Hachiko, o cão mais leal
-do Japão, é um famoso ponto de encontro ao lado da estação.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/yQ68P5T/takeshita-street.jpg" alt="Takeshita Street, Harajuku"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Harajuku (Takeshita Street)</h3>
-<p class="text-gray-600">Harajuku é o epicentro da cultura jovem e da moda extravagante
-de Tóquio. A rua Takeshita Street é famosa por suas butiques de moda, lojas de souvenirs, crepes
-gigantes e uma variedade de lojas de doces.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/hK2F13x/meiji-jingu.jpg" alt="Meiji Jingu, Tóquio" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Templo Meiji Jingu</h3>
-<p class="text-gray-600">Este templo xintoísta é dedicado ao Imperador Meiji e à Imperatriz
-Shoken. Localizado em um enorme e sereno bosque, ele oferece um refúgio de tranquilidade em meio à
-agitação da cidade.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 08/12 - Akihabara e Asakusa -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 08/12 - Akihabara e Asakusa</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/S6w8G6k/akihabara.jpg" alt="Akihabara, Tóquio" class="w-full
-rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Akihabara</h3>
-<p class="text-gray-600">Conhecida como a "Cidade Elétrica" e o centro da cultura otaku,
-Akihabara é o paraíso dos amantes de animes, mangás, videogames e eletrônicos. Suas ruas são
-repletas de lojas de figures de ação, fliperamas e maid cafés, oferecendo uma experiência vibrante e
-única.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/L9HjC2B/senso-ji.jpg" alt="Templo Senso-ji, Asakusa" class="w-
-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Asakusa (Nakamise-dori e Templo Senso-ji)
-</h3>
-<p class="text-gray-600">Asakusa é o bairro mais tradicional de Tóquio. O Templo Senso-ji,
-o mais antigo de Tóquio, é um dos principais pontos turísticos. Antes de chegar ao templo, você passará
-pela Nakamise-dori, uma rua comercial repleta de lojas de souvenirs, doces e artesanato.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 09/12 - Tour Privado ao Monte Fuji -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 09/12 - Tour Privado ao Monte Fuji
-com Guia em Português</h2>
-<div class="space-y-2">
-<img src="https://i.ibb.co/C0cR7Yp/mount-fuji.jpg" alt="Monte Fuji" class="w-full rounded-lg
-object-cover h-64 md:h-80">
-<h3 class="text-xl font-semibold text-gray-700">Tour Privado ao Monte Fuji</h3>
-<p class="text-gray-600">Este passeio de um dia inteiro oferece a chance de ver o icônico
-Monte Fuji de perto. O tour inclui a visita a pontos turísticos como a 5ª Estação do Monte Fuji, o
-pitoresco Lago Kawaguchiko e os serenos Oshino Hakkai Ponds.
-</p>
-</div>
-</div>
-<!-- Dia 10/12 - Yanaka Ginza e o “Velho Tóquio”
--->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 10/12 - Yanaka Ginza e o “Velho
-Tóquio”</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/hK2F13x/yanaka-ginza.jpg" alt="Yanaka Ginza, Tóquio" class="w-
-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Yanaka Ginza</h3>
-<p class="text-gray-600">O bairro de Yanaka oferece uma atmosfera nostálgica e tranquila
-que remonta ao "Velho Tóquio"
-. A rua comercial Yanaka Ginza é uma pérola escondida, com pequenas
-lojas de artesanato, docerias e uma atmosfera amigável.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/zGyxR2H/tennoji-temple.jpg" alt="Templo Tennoji, Tóquio"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Templo Tennoji</h3>
-<p class="text-gray-600">É um dos templos budistas mais antigos da área de Yanaka. O
-destaque é a estátua do Grande Buda de bronze, uma réplica do Grande Buda de Kamakura.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/7z06HqW/yuyake-dandan.jpg" alt="Yuyake Dandan, Tóquio"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Yuyake Dandan</h3>
-<p class="text-gray-600">Esta escadaria, cujo nome significa "Degraus do Pôr do Sol"
-, é
-famosa por oferecer uma das vistas mais bonitas para o pôr do sol em Tóquio. É um local popular para
-moradores e turistas que desejam um momento de paz e uma bela vista.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 11/12 - Odaiba -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 11/12 - Odaiba</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<img src="https://i.ibb.co/p330k5H/yurikamome.jpg" alt="Monotrilho Yurikamome Line"
-class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Odaiba (Monotrilho Yurikamome Line)</h3>
-<p class="text-gray-600">Odaiba é uma ilha artificial na Baía de Tóquio, conhecida por
-suas atrações futuristas. A viagem de monotrilho pela **Yurikamome Line** é parte da experiência,
-oferecendo vistas espetaculares da paisagem urbana, da Rainbow Bridge e da Baía de Tóquio.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/C0cR7Yp/divercity-gundam.jpg" alt="Gundam em DiverCity Tokyo
-Plaza" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">Roda-gigante Daikanransha e DiverCity
-Tokyo Plaza</h3>
-<p class="text-gray-600">A roda-gigante de Odaiba foi desmontada permanentemente. Não
-é mais uma atração disponível. Em vez disso, você pode explorar outras atrações próximas, como o
-**DiverCity Tokyo Plaza**
-, para ver o famoso Gundam em tamanho real, ou simplesmente aproveitar a
-vista da **Ponte do Arco-Íris**
-.
-</p>
-</div>
-<div class="space-y-2">
-<img src="https://i.ibb.co/JCBwF29/teamlab-borderless.jpg" alt="TeamLab Borderless,
-Tóquio" class="w-full rounded-lg object-cover h-48">
-<h3 class="text-xl font-semibold text-gray-700">TeamLab Borderless</h3>
-<p class="text-gray-600">Um museu de arte digital imersivo e interativo, onde as obras de
-arte se movem e interagem com os visitantes. O conceito de "sem fronteiras" significa que as obras de
-arte fluem de uma sala para outra, criando um mundo contínuo e fascinante.
-</p>
-</div>
-</div>
-</div>
-<!-- Dia 12/12 - Retorno ao Brasil -->
-<div class="card p-6 md:p-8 space-y-6">
-<h2 class="text-2xl font-bold text-gray-800 section-title">Dia 12/12 - Retorno ao Brasil</h2>
-<div class="space-y-2">
-<img src="https://i.ibb.co/5c35Lq5/narita-express.jpg" alt="Narita Express Train" class="w-full
-rounded-lg object-cover h-64 md:h-80">
-<h3 class="text-xl font-semibold text-gray-700">Retorno ao Brasil</h3>
-<p class="text-gray-600">Para o seu voo de volta, você precisará ir para um dos dois
-aeroportos de Tóquio, Haneda (HND) ou Narita (NRT). A forma mais eficiente é usar os trens
-expressos, que são rápidos e confiáveis.
-</p>
-</div>
-</div>
-</div>
+<body class="bg-gray-50 text-gray-900 leading-relaxed">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-2">Roteiro Japão</h1>
+            <p class="text-lg sm:text-xl text-gray-600">Sugestão de passeios para Flávio e Rafael</p>
+        </header>
+
+        <!-- Itinerary Sections -->
+        <main class="space-y-10">
+
+            <!-- Dia 21/Nov - Chegada em Osaka -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 21/Nov - Chegada em Osaka</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/1e40af/ffffff?text=Osaka" alt="Osaka vista de cima" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Chegada em Osaka no final do dia. Aproveite para se instalar no hotel e descansar da viagem. Esta noite, você pode explorar as proximidades do seu hotel.</p>
+                </div>
+            </div>
+
+            <!-- Dia 22/Nov - Descubra Osaka -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 22/Nov - Descubra Osaka</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Castelo de Osaka</h3>
+                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Castelo+de+Osaka" alt="Castelo de Osaka em um dia de sol" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Castelo de Osaka, um dos mais famosos do Japão, tem um papel central na história da unificação do país. Reconstruído diversas vezes, ele abriga um museu moderno que narra a história do castelo e do seu fundador, Toyotomi Hideyoshi.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Harukas 300 Observatory</h3>
+                            <img src="https://placehold.co/400x300/9ca3af/ffffff?text=Harukas+300" alt="Vista de Osaka a partir do Harukas 300" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Localizado no edifício Abeno Harukas, este observatório oferece vistas panorâmicas de 360 graus de toda a cidade de Osaka. É o lugar perfeito para ver o pôr do sol e as luzes da cidade acenderem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 23/Nov - Bairros Icônicos de Osaka -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 23/Nov - Bairros Icônicos de Osaka</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Bairro Dotonbori</h3>
+                            <img src="https://placehold.co/400x300/d1d5db/ffffff?text=Dotonbori" alt="Placas de neon em Dotonbori à noite" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Dotonbori é o coração da vida noturna e gastronômica de Osaka, famoso por suas placas de neon, em especial a do Glico Running Man. As ruas são repletas de restaurantes e bares.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Umeda Sky Building</h3>
+                            <img src="https://placehold.co/400x300/e5e7eb/ffffff?text=Umeda+Sky+Building" alt="Umeda Sky Building de dia" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Com sua arquitetura única e o Floating Garden Observatory, este edifício oferece vistas espetaculares de Osaka, incluindo o Rio Yodo. O acesso ao observatório é pago.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 24/Nov - Gastronomia e Tradições -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 24/Nov - Gastronomia e Tradições</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Mercado de Kuromon</h3>
+                            <img src="https://placehold.co/400x300/f3f4f6/ffffff?text=Mercado+Kuromon" alt="Pessoas no Mercado de Kuromon" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Conhecido como a "Cozinha de Osaka", o Mercado Kuromon é um paraíso para os amantes de comida. Aqui você pode provar frutos do mar frescos, frutas, e outras delícias locais.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: TeamLab Botanical Garden Osaka</h3>
+                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=TeamLab+Botanical+Garden" alt="Luzes do TeamLab Botanical Garden" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Uma experiência artística interativa em um jardim botânico, onde a natureza e a tecnologia se misturam. As instalações de luzes e sons mudam com o movimento das pessoas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 25/Nov - Excursão para Nara -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 25/Nov - Excursão para Nara</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Parque de Nara e Templo Todaiji</h3>
+                            <img src="https://placehold.co/400x300/9ca3af/ffffff?text=Parque+de+Nara" alt="Veados em Nara" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Nara é a casa de milhares de veados que passeiam livremente pelo Parque de Nara. Dentro do parque, o Templo Todaiji abriga o Daibutsu, ou Grande Buda, uma das maiores estátuas de bronze do mundo.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Santuário Kasuga Taisha</h3>
+                            <img src="https://placehold.co/400x300/f3f4f6/ffffff?text=Kasuga+Taisha" alt="Lanternas em Kasuga Taisha" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Este santuário xintoísta é famoso por suas milhares de lanternas de pedra e bronze, doadas ao longo dos anos por fiéis. A atmosfera é mística e serena.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 26/Nov - Viagem para Hiroshima -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 26/Nov - Viagem para Hiroshima</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/94a3b8/ffffff?text=Trem+Bala" alt="Trem bala no Japão" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Viagem de trem para Hiroshima. Tempo para fazer o check-in no hotel e começar a explorar a cidade, visitando o Parque Memorial da Paz e o Museu da Bomba Atômica.</p>
+                </div>
+            </div>
+
+            <!-- Dia 27/Nov - Tour em Hiroshima e Miyajima -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 27/Nov - Tour em Hiroshima e Miyajima</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Parque Memorial da Paz</h3>
+                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Parque+Memorial+da+Paz" alt="Parque Memorial da Paz em Hiroshima" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Parque Memorial da Paz foi construído para honrar as vítimas do bombardeio de 1945. Ele inclui o icônico Domo da Bomba Atômica, o Museu Memorial da Paz e o Cenotáfio.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Ilha de Miyajima e Santuário Itsukushima</h3>
+                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=Miyajima" alt="Templo flutuante em Miyajima" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">A Ilha de Miyajima é famosa por seu Santuário Itsukushima e o portão torii "flutuante" que parece estar sobre a água na maré alta. É um dos locais mais fotografados do Japão.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 28/Nov - Viagem para Quioto -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 28/Nov - Viagem para Quioto</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/10b981/ffffff?text=Quioto" alt="Templo em Quioto" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Partida de Hiroshima para Quioto de trem-bala. Aproveite o restante do dia para se instalar e fazer uma primeira exploração da cidade, que é a capital cultural do Japão.</p>
+                </div>
+            </div>
+
+            <!-- Dia 29/Nov - Ouro e Prata em Quioto -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 29/Nov - Ouro e Prata em Quioto</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Kinkaku-ji (Pavilhão Dourado)</h3>
+                            <img src="https://placehold.co/400x300/d1d5db/ffffff?text=Kinkaku-ji" alt="Kinkaku-ji refletido na água" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Kinkaku-ji, ou Pavilhão Dourado, é um templo zen cujos dois andares superiores são inteiramente cobertos por folhas de ouro. É um dos templos mais famosos do Japão.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Ginkaku-ji (Pavilhão de Prata)</h3>
+                            <img src="https://placehold.co/400x300/f3f4f6/ffffff?text=Ginkaku-ji" alt="Ginkaku-ji em meio à natureza" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Ginkaku-ji, ou Pavilhão de Prata, é um templo zen de estilo mais simples, conhecido por seu lindo jardim de areia e por sua tranquilidade, contrastando com o brilho do Kinkaku-ji.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dia 30/Nov - História e Sabores de Quioto -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 30/Nov - História e Sabores de Quioto</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Castelo Nijo</h3>
+                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Castelo+Nijo" alt="Castelo Nijo com seus portões" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Castelo Nijo foi construído pelo primeiro xogun do período Edo. Ele é conhecido por seus "pisos de rouxinol" que chilreiam ao serem pisados, servindo como alarme contra intrusos.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Mercado Nishiki</h3>
+                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=Mercado+Nishiki" alt="Barracas de comida no Mercado Nishiki" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Mercado Nishiki é um mercado de alimentos, conhecido como a "Cozinha de Quioto". Ele é o melhor lugar para provar comidas locais e encontrar ingredientes únicos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dia 01/Dez - Floresta de Bambu de Arashiyama -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 01/Dez - Floresta de Bambu de Arashiyama</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/10b981/ffffff?text=Arashiyama" alt="Bosque de bambu em Arashiyama" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">A Floresta de Bambu de Arashiyama é uma das paisagens mais famosas de Quioto. Caminhar por este local é uma experiência única e tranquila, com o som do vento nas folhas de bambu.</p>
+                </div>
+            </div>
+
+            <!-- Dia 02/Dez - Portais Vermelhos de Fushimi Inari -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 02/Dez - Portais Vermelhos de Fushimi Inari</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/ef4444/ffffff?text=Fushimi+Inari+Taisha" alt="Milhares de portões torii em Fushimi Inari" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">O Fushimi Inari Taisha é um santuário xintoísta famoso por seus milhares de portões torii vermelhos, que formam um caminho que leva até o topo da montanha. É um local de peregrinação e uma paisagem icônica.</p>
+                </div>
+            </div>
+
+            <!-- Dia 03/Dez - Viagem para Kanazawa -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 03/Dez - Viagem para Kanazawa</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/f3f4f6/ffffff?text=Kanazawa" alt="Jardim em Kanazawa" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Viagem de trem para Kanazawa. Conhecida como "Pequena Quioto", a cidade é famosa por seus museus e jardins, como o Kenrokuen. Você pode se instalar no hotel e começar a explorar a cidade.</p>
+                </div>
+            </div>
+            
+            <!-- Dia 04/Dez - Aldeias Históricas do Japão -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 04/Dez - Aldeias Históricas do Japão</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/a3e635/ffffff?text=Shirakawago" alt="Vilas históricas de Shirakawago" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Passeio para a cidade histórica de Shirakawa-go, famosa por suas casas com telhados de palha íngremes. O local é considerado Patrimônio Mundial da UNESCO.</p>
+                </div>
+            </div>
+            
+            <!-- Dia 05/Dez - Viagem para Tóquio -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 05/Dez - Viagem para Tóquio</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/4f46e5/ffffff?text=Tóquio" alt="Skyline de Tóquio" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Viagem de trem para Tóquio. A capital do Japão combina modernidade e tradição, oferecendo uma variedade de atrações para todos os gostos.</p>
+                </div>
+            </div>
+
+            <!-- Dia 06/Dez - O Melhor de Ginza -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 06/Dez - O Melhor de Ginza</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Ginza Six Rooftop Garden</h3>
+                            <img src="https://placehold.co/400x300/10b981/ffffff?text=Ginza+Six+Rooftop+Garden" alt="Jardim no telhado do Ginza Six" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Este jardim no telhado do shopping Ginza Six oferece uma vista incrível da cidade e um espaço verde para relaxar em meio ao agito de Ginza. A entrada é gratuita.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Teatro Kabuki-za</h3>
+                            <img src="https://placehold.co/400x300/ef4444/ffffff?text=Teatro+Kabuki-za" alt="Teatro Kabuki-za em Tóquio" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Kabuki-za é o principal teatro de Tóquio para o kabuki, a forma de teatro tradicional japonesa. Você pode assistir a uma peça inteira ou apenas a um ato, que é mais curto e econômico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 07/Dez - Shibuya e Harajuku Vibrantes -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 07/Dez - Shibuya e Harajuku Vibrantes</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Shibuya Scramble Crossing</h3>
+                            <img src="https://placehold.co/400x300/fca5a5/ffffff?text=Shibuya" alt="Pessoas no cruzamento de Shibuya" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">Considerado o cruzamento mais movimentado do mundo, o Shibuya Scramble é um espetáculo de movimento. É o lugar perfeito para tirar fotos e observar o caos organizado.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Santuário Meiji Jingu</h3>
+                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=Meiji+Jingu" alt="Santuário Meiji Jingu e sua entrada" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Santuário Meiji Jingu é dedicado ao Imperador Meiji e à Imperatriz Shoken. É um oásis de calma, cercado por uma floresta de 100.000 árvores. A entrada é gratuita.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dia 08/Dez - Tradição em Asakusa e Vista do Skytree -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 08/Dez - Tradição em Asakusa e Vista do Skytree</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Templo Senso-ji</h3>
+                            <img src="https://placehold.co/400x300/6b7280/ffffff?text=Templo+Senso-ji" alt="Templo Senso-ji em Asakusa" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Templo Senso-ji, em Asakusa, é o templo budista mais antigo de Tóquio. Sua entrada, com o Portão Kaminarimon e suas lanternas gigantes, é icônica.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Tokyo Skytree Town</h3>
+                            <img src="https://placehold.co/400x300/1f2937/ffffff?text=Tokyo+Skytree" alt="Tokyo Skytree à noite" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">A Tokyo Skytree é a torre de telecomunicações mais alta do mundo. Os decks de observação oferecem vistas de 360 graus de Tóquio, e nos arredores você encontra um aquário e um planetário.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 09/Dez - Hakone e Monte Fuji -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 09/Dez - Hakone e Monte Fuji</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/94a3b8/ffffff?text=Monte+Fuji" alt="Monte Fuji com o Lago Ashi" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Excursão guiada para Hakone. O passeio de barco no Lago Ashi e as vistas do Monte Fuji são as principais atrações, juntamente com a visita a templos e museus na região.</p>
+                </div>
+            </div>
+            
+            <!-- Dia 10/Dez - Ueno e Yanaka -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 10/Dez - Ueno e Yanaka</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Parque de Ueno</h3>
+                            <img src="https://placehold.co/400x300/10b981/ffffff?text=Parque+de+Ueno" alt="Pessoas no Parque de Ueno" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O Parque de Ueno é um dos parques públicos mais famosos de Tóquio, com museus, um zoológico, um lago de lótus e o Santuário Toshogu. É um ótimo lugar para relaxar.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Bairro de Yanaka</h3>
+                            <img src="https://placehold.co/400x300/ef4444/ffffff?text=Yanaka" alt="Rua tranquila em Yanaka" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O bairro de Yanaka é uma das poucas áreas de Tóquio que sobreviveu aos terremotos e bombardeios. É um lugar tranquilo, com lojas antigas, templos e uma atmosfera nostálgica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 11/Dez - Odaiba -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 11/Dez - Odaiba</h2>
+                <div class="space-y-2">
+                    <div class="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: Yurikamome Line e Roda-gigante</h3>
+                            <img src="https://placehold.co/400x300/fca5a5/ffffff?text=Odaiba" alt="Roda-gigante em Odaiba" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">A linha de monotrilho Yurikamome oferece vistas deslumbrantes da cidade e da Ponte do Arco-Íris. A antiga roda-gigante de Odaiba não está mais disponível, mas há outras atrações como o famoso robô Gundam e shoppings.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="font-bold text-lg mb-2">Passeio: TeamLab Borderless</h3>
+                            <img src="https://placehold.co/400x300/a3e635/ffffff?text=TeamLab+Borderless" alt="Pessoas em uma instalação do TeamLab" class="w-full rounded-lg mb-4">
+                            <p class="text-sm text-gray-600">O TeamLab Borderless é um museu de arte digital imersivo e interativo onde as obras de arte se movem e interagem com os visitantes. Uma experiência única e futurista.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 12/Dez - Retorno -->
+            <div class="card p-6 md:p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">Dia 12/Dez - Retorno</h2>
+                <div class="space-y-2">
+                    <img src="https://placehold.co/800x400/4b5563/ffffff?text=Aeroporto" alt="Aeroporto de Tóquio" class="w-full rounded-lg object-cover h-64 md:h-80">
+                    <p class="text-gray-700">Fim da viagem. Partida para o aeroporto para o retorno ao Brasil. Uma jornada inesquecível pelo Japão!</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
 </body>
 </html>
